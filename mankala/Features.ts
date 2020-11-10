@@ -26,4 +26,11 @@ namespace Mankala {
             return stringBuilder;
         }
     }
+    
+    export function testBrowser() {
+        var game = new Game();
+        game.interactive();
+        var body = <HTMLBodyElement>document.getElementById(bodyId);
+        body.onresize = () => { game.resize(); };
+    }
 }
